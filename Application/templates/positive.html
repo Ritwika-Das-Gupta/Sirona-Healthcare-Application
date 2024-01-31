@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sirona Recommendation</title>
+  <link rel="stylesheet" href="../diseasepred/form-wave/dist/style.css">
+  <link rel="stylesheet" href="../diseasepred/form-wave/src/style.scss">
+  <!-- Favicon -->
+
+</head>
+<style>
+  /* Import Google font - Poppins */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #353842;
+  }
+
+  .input-field {
+    position: relative;
+  }
+
+  .input-field input {
+    width: 350px;
+    height: 60px;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 0 15px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    outline: none;
+  }
+
+  .input-field label {
+    position: absolute;
+    top: .0%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 19px;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+
+  input:focus {
+    border: 2px solid #ffcc00;
+  }
+
+  input:focus~label,
+  input:valid~label {
+    top: 0;
+    left: 15px;
+    font-size: 16px;
+    padding: 0 2px;
+    background: #353842;
+  }
+
+
+  :root {
+    --main-color: #840b2a;
+    --font-size: 14px;
+  }
+
+  *,
+  *::afte,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    background: url(http://localhost/dentcare-1.0.0/dentcare-1.0.0/img/dispred_1.png);
+    background-size: cover;
+  }
+
+  p {
+    margin: 0;
+  }
+  ::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+
+  .form.form--2 {
+    opacity: 0.9;
+    transform: scale(0.8);
+    /* Start with a smaller size */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  /* Animation on hover */
+  .form.form--2:hover {
+    opacity: 2;
+    transform: scale(1);
+  }
+
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    padding: 50px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(2, 54, 96, 0.66);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    transition: 0.3s ease;
+    color: wheat;
+  }
+
+  .form__item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: calc(var(--font-size) * 2.5);
+  }
+
+  .form__item label {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 10px;
+    flex: 1;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    color: #fff;
+  }
+
+  .form__item label span {
+    font-size: var(--font-size);
+  }
+
+  .form__item label span:first-of-type {
+    text-transform: uppercase;
+  }
+
+  .form__item input {
+    flex: 2;
+    min-height: calc(var(--font-size) * 2);
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+  }
+
+  .form__item input:not(:placeholder-shown),
+  .form__item input:focus-visible,
+  .form__item input:focus {
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+  }
+
+  .form__item input:not(:placeholder-shown)~label>span,
+  .form__item input:focus-visible~label>span,
+  .form__item input:focus~label>span {
+    color: #83012a;
+  }
+
+  .form__item:last-of-type {
+    margin-bottom: 30px;
+  }
+
+  .form__btn {
+    position: relative;
+    z-index: 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: var(--main-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    overflow: hidden;
+  }
+
+  .form__btn:hover {
+    color: #fff;
+  }
+
+  .form__btn:hover:after {
+    height: 100%;
+  }
+
+  .form__btn:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    z-index: -1;
+    width: 100%;
+    transition: all 0.3s ease;
+    background-blend-mode: hard-light;
+    background: linear-gradient(0deg, #343702 0%, #840b2a 80%);
+    background-color: var(--main-color);
+  }
+
+  .form--1 .form__item label span {
+    transition: 0.3s cubic-bezier(0.32, 0.5, 0.3, 1.6);
+  }
+
+  .form--1 .form__item input:not(:placeholder-shown)~label>span,
+  .form--1 .form__item input:focus-visible~label>span,
+  .form--1 .form__item input:focus~label>span {
+    transform: translateY(-30px);
+  }
+
+  .form--2 .form__item label span {
+    transition: 0.3s cubic-bezier(0.32, 0.5, 0.3, 1.6);
+  }
+
+  .form--2 .form__item input:not(:placeholder-shown)~label>span,
+  .form--2 .form__item input:focus-visible~label>span,
+  .form--2 .form__item input:focus~label>span {
+    transform: translateY(calc(var(--font-size) * 1.5));
+  }
+
+  .form--3 .form__item label span {
+    transition: 0.7s cubic-bezier(-0.3, 0.5, 0.3, 1.5);
+  }
+
+  .form--3 .form__item input:not(:placeholder-shown)~label>span,
+  .form--3 .form__item input:focus-visible~label>span,
+  .form--3 .form__item input:focus~label>span {
+    transform: translateY(-30px);
+  }
+
+
+  h1 {
+    font-size: 100px;
+    /* text-align: center; */
+    font-family: 'Righteous', sans-serif;
+    letter-spacing: 12px;
+    font-weight: bolder;
+    /* margin-left: 20%; */
+    /* margin-top: -20%; */
+    /* margin-left: -24%; */
+    
+
+
+  }
+
+  .a {
+    background: url(https://i.postimg.cc/5NrM8Gyz/pexels-tirachard-kumtanom-347141.jpg);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  .effect {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: wheat;
+
+    &::after {
+      content: "|";
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 8px;
+      animation: blink 0.7s infinite alternate;
+    }
+  }
+  
+  @keyframes blink {
+    to {
+      opacity: 0;
+    }
+  }
+</style>
+
+<body>
+
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  
+  <h1 class="a">DISEASE MATCH RESULT</h1>
+  <div style="margin-top: -60%;margin-left: 0%; position:absolute;">
+    <p class="effect" id="effect"></p>
+  </div>
+  <p style="margin-top: 10%;margin-left: -60%;display: none;" id="words">{{ symptoms }}</p>
+
+ 
+  <ul id="suggestionsList1">
+    {% for suggestion in suggestions %}
+    <li hidden>{{suggestion}}</li>
+    {% endfor %}
+  </ul>
+
+  <!-- SOHAM -->
+  <ul id="suggestionsList">
+    {% for suggestion in suggestions %}
+
+  </ul>
+  
+  <div class="form form--2">
+    <h3 style="margin-left: 70%;margin-bottom:5% ;">Sirona Says...</h3>
+    <img src="http://localhost/dentcare-1.0.0/dentcare-1.0.0/templates/disease.png" alt="" width="30%"
+      style="margin-bottom: -20%;margin-left: 64%;margin-top: -10%;">
+
+    {% set c = namespace(value=0) %}
+
+    {% set prefixes = ['Disease Match: ', 'Medicines: ', 'Precautions:'] %}
+    {% for part in suggestion.split('*') %}
+    {% set subparts = part.split('-') %}
+    {% for subpart in subparts %}
+    <p>{{ prefixes[c.value] }} {{ subpart }}</p>
+    {% set c.value = c.value + 1 %}
+    {% endfor %}
+    {% endfor %}
+  </div>
+
+  {% endfor %}
+
+  <!-- <a href="http://localhost/dentcare-1.0.0/dentcare-1.0.0/index.html">Go back</a> -->
+  <div class="input-field">
+    <h2 style="color: wheat;margin-left: 20%;">Do you wish to print e-prescription?</h2>
+
+    <!-- <label style="margin-top: 6%;">Enter email</label> -->
+
+
+  <form action="http://localhost/dentcare-1.0.0/dentcare-1.0.0/templates/store.php" method="POST">
+    <input type="text" value="{{symptoms}}" name="symptom" hidden>
+    <input type="text" name="suggestions" id="suggestions" hidden>
+    <!-- <label for="">Enter your email</label>
+      <input type="text"  name="email" required>
+      <input type="submit"> -->
+      <input type="text"  name="email" required spellcheck="false" placeholder="Enter your email">
+
+      <input type="submit" style="cursor: pointer;">
+      <a href="http://localhost/dentcare-1.0.0/dentcare-1.0.0/index.html"><input type="button" value="Go Back" required spellcheck="false" style="cursor: pointer;">
+      <a href="http://localhost/dentcare-1.0.0/dentcare-1.0.0/stor/final_final_project/shop/store.html"><input type="button" value="Go to Store" required spellcheck="false" style="cursor: pointer;"></a>
+
+
+
+
+  </form>
+  
+</div>
+
+  <script>
+    // Get the value of {{symptoms}} from the HTML
+    // Get the text content of the paragraph
+    const wordsParagraph = document.getElementById("words").innerText;
+    console.log(wordsParagraph);
+
+    // Extract the part of the string containing the array (assuming it's formatted as JSON)
+    const arrayString = wordsParagraph.split(",");
+console.log(arrayString);
+    // Parse the string into a JavaScript array
+    // const symptomsArray = JSON.parse(arrayString);
+
+    // Now you can use symptomsArray as needed in your JavaScript code
+    // console.log(symptomsArray);
+
+  </script>
+
+  <script>
+    // Extract suggestions from the ul element
+    var ulElement = document.getElementById("suggestionsList1");
+    var liElements = ulElement.getElementsByTagName('li');
+
+    // Initialize an array to store suggestions
+    var suggestionsArray = [];
+
+    // Iterate through li elements and extract suggestions
+    for (var i = 0; i < liElements.length; i++) {
+      var suggestion = liElements[i].textContent.trim();
+      suggestionsArray.push(suggestion)
+    }
+
+    // Create a string by joining suggestions with underscores
+    var suggestionsString = suggestionsArray.join('_');
+
+    // Print the suggestionsString
+    document.getElementById('suggestions').value = suggestionsString;
+    const textElement = document.getElementById("effect");
+    const textToType = textElement.innerText;
+    const resultArray = ["Entered Symptoms:"].concat(arrayString);
+
+// Join the elements of the resulting array into a single string
+    const resultString = resultArray.join(", ");
+    const wordsToType = [resultString];
+
+
+    const maxWordLength = Math.max(...wordsToType.map((word) => word.length));
+
+    let currentWordIndex = 0;
+    let currentWord = wordsToType[currentWordIndex];
+
+    let index = 0;
+    function typeText() {
+      textElement.innerText = currentWord.slice(0, index++);
+
+      if (index <= currentWord.length) {
+        setTimeout(typeText, 150);
+      } else {
+        setTimeout(eraseText, 5000);
+      }
+    }
+
+    // function eraseText() {
+    //   textElement.innerText = currentWord.slice(0, index);
+
+    //   if (index > 0) {
+    //     index--;
+    //     setTimeout(eraseText, 150);
+    //   } else {
+    //     currentWordIndex = (currentWordIndex + 1) % wordsToType.length;
+    //     currentWord = wordsToType[currentWordIndex];
+    //     setTimeout(typeText, maxWordLength * 50);
+    //   }
+    // }
+
+    typeText();
+
+
+  </script>
+</body>
+
+</html>
