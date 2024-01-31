@@ -1,0 +1,373 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Sirona</title>
+    <!-- Add any necessary CSS or meta tags here -->
+</head>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/simpletextrotator.css'><link rel="stylesheet" href="./style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch&display=swap" rel="stylesheet">
+
+
+<style>
+
+    
+    :root {
+  --var-color1: #0A1931;
+  --var-color2: #185ADB;
+  --var-color3: #85e3e0;
+  --var-color4: #EFEFEF;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--var-color1);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: url(img/bg1.jpg);
+  background-size: cover;
+
+  
+}
+
+#box1:hover #a1 img{
+    filter: brightness(30%);
+}
+
+#box2:hover #a2 img{
+    filter: brightness(30%);
+}
+
+#box1:hover #a1 p{
+   opacity: 1;
+}
+
+#box2:hover #a2 p{
+    opacity: 1;
+}
+
+
+
+
+.box {
+    position: relative;
+    height: 80%;
+    width: 20vw;
+    min-width: 10vw;
+    max-width: 23vw;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    transition: ease-in 0.8s;
+    overflow: hidden;
+    background-color: var(--var-color1);
+    border-radius: 500px;
+    border: 2px solid var(--var-color3);
+    color: var(--var-color4); 
+    margin-left: -40%;
+    margin-right: 40%;
+    margin-top: 7%;
+    
+}
+
+.box:nth-child(1) {
+    animation: apparitionBox 1.5s ease-in-out;
+}
+
+.box:nth-child(2) {
+    animation: apparitionBox 2s ease-in-out;
+}
+
+.box:nth-child(3) {
+    animation: apparitionBox 2.5s ease-in-out;
+}
+
+.box:nth-child(4) {
+    animation: apparitionBox 3s ease-in-out;
+}
+
+.box a {
+    text-decoration: none;
+    color: var(--var-color4);
+}
+
+.box p {
+    /* rotate: -90deg; */
+    font-size: 30px;
+    font-weight: 300;
+    font-family: 'Cabin Sketch';
+    transition: ease-in 0.5s;
+    opacity: 0;
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    color: wheat;
+
+    /* @include respond(tab-port){ 
+        font-size: 7vw;
+        rotate: 0deg;
+    
+    } */
+}
+/* 
+.box:hover {
+    width: 50vw;
+    max-width: 50vw;
+    background-color: var(--var-color3);
+    color: var(--var-color1);
+    transition: ease 0.8s;
+}
+
+.box:hover a {
+    color: var(--var-color1);
+    transition: ease-in 0.8s;
+}
+*/
+/* .box:hover p {
+    rotate: 0deg;
+    transition: ease-in 2s;
+}  */
+
+@keyframes apparitionBox {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+/* h1{
+    margin-top: -25%;
+    font-size: 80px;
+    margin-left: 20%;
+    color: white;
+    animation: fall 10s forwards ;
+} */
+
+
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+    }
+    80% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-25%);
+    }
+}
+
+
+.content{
+    width: 65%;
+    height: 50%;
+    display: flex;
+    gap: 1vw;
+    margin-left: -50%;
+    margin-top: 15%;
+}
+
+
+    h1 {
+        margin-top: -20%;
+        /* font-size: 80px; */
+        margin-left: 50% ;
+        font-family: 'CoreCircus', sans-serif;
+        text-transform: uppercase;
+        font-size: 10vw;
+        text-align: center;
+        line-height: 1;
+        /* margin: 0; */
+        /* top: 50%;
+        left: 50%; */
+        transform: translate(-50%, -50%);
+        position: absolute;
+        color: #61c0c8;
+        text-shadow: 1px 0px 0px #67c2c5,
+            0px 1px 0px #67c2c5,
+            2px 1px 0px #67c2c5,
+            1px 2px 0px #67c2c5,
+            3px 2px 0px #67c2c5,
+            2px 3px 0px #67c2c5,
+            4px 3px 0px #67c2c5,
+            3px 4px 0px #67c2c5,
+            5px 4px 0px #67c2c5,
+            4px 5px 0px #67c2c5,
+            6px 5px 0px #67c2c5,
+            5px 6px 0px #67c2c5,
+            7px 6px 0px #67c2c5,
+            6px 7px 0px #67c2c5,
+            8px 7px 0px #aff1f9,
+            7px 8px 0px #aff1f9,
+            9px 8px 0px #aff1f9,
+            8px 9px 0px #aff1f9,
+            10px 9px 0px #aff1f9,
+            9px 10px 0px #aff1f9,
+            11px 10px 0px #aff1f9,
+            10px 11px 0px #aff1f9;
+            /* animation: fall 10s forwards ; */
+
+    }
+
+    h1:before,
+    h1:after {
+        content: attr(data-heading);
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        top: 0;
+    }
+
+    h1:before {
+        color: white;
+        width: 100%;
+        z-index: 5;
+        font-family: 'CoreCircus2DIn';
+        font-weight: normal;
+    }
+
+    h1:after {
+        z-index: -1;
+        text-shadow:
+            -1px -1px 0 white,
+            1px -1px 0 white,
+            -1px 1px 0 white,
+            1px 1px 0 white,
+            -3px 3px 2px #6c9d9e,
+            -5px 5px 2px #6c9d9e,
+            -7px 7px 2px #6c9d9e,
+            -8px 8px 2px #6c9d9e,
+            -9px 9px 2px #6c9d9e,
+            -11px 11px 2px #6c9d9e;
+    }
+
+@font-face {
+    font-family: 'CoreCircus2DIn';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BFA_1_0.eot');
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BFA_1_0.eot?#iefix') format('embedded-opentype'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BFA_1_0.woff2') format('woff2'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BFA_1_0.woff') format('woff'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BFA_1_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'CoreCircus';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot');
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot?#iefix') format('embedded-opentype'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff2') format('woff2'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff') format('woff'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.ttf') format('truetype');
+}
+
+
+.tagline {
+  width: 100%;
+  padding: 50px;
+  padding-left: 150px;
+  padding-top: 200px;
+  color: #eee;
+  font-size: 40px;
+  /* font-weight: bold; */
+  margin-top: -25%;
+  margin-left: 18%;
+  /* font-family: 'Archivo Black', sans-serif; */
+font-family: 'Cabin Sketch';
+}
+
+.flip {
+  color: #fec236;
+}
+
+
+
+</style>
+<script></script>
+<body>
+    
+    <h1 contenteditable data-heading="Sirona">Sirona</h1>
+
+    <div class="tagline">
+        <span class="flip">Transform, Ease, Assure ,Innovate</span> healthcare experiences online.
+      </div>
+      
+      
+      
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+      <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/jquery.simple-text-rotator.js'></script><script  src="./script.js"></script>
+      
+      
+      
+      
+    <div class="content">
+        <div class="box" id="box1">
+            <a href="doctor/doc_entry.html" id="a1">
+                <img id="img1" src="img/serv2.jpg" alt="" width="500px" style="margin-top: -10%;" >
+                <p id="para1">Doctor Login</p>
+            </a>
+        </div>
+        <div class="box" id="box2">
+            <a href="login/signup.html" id="a2">
+                <img id="img2" src="img/user.png" alt="" width="500px" >
+                <p id="para2">User Login</p>
+            </a>
+        </div>
+        
+            </a>
+        </div>
+    </div>
+</body>
+
+<script>
+// const box1 = document.getElementById("box1");
+// const p1 = document.getElementById("para1");
+// const img1 = document.getElementById("img1");
+
+// box1.addEventListener('mouseover', function () {
+//     p1.style.display = 'block';
+//     img1.style.filter = 'brightness(30%)';});
+
+// box1.addEventListener('mouseout', function () {
+//     p1.style.display = 'none';
+//     img1.style.filter = 'brightness(100%)';});
+
+
+// const box2 = document.getElementById("box2");
+// const p2 = document.getElementById("para2");
+// const img2 = document.getElementById("img2");
+
+// box2.addEventListener('mouseover', function () {
+//     p2.style.display = 'block';
+//     img2.style.filter = 'brightness(30%)';});
+
+// box2.addEventListener('mouseout', function () {
+//     p2.style.display = 'none';
+//     img2.style.filter = 'brightness(100%)';;
+// });
+
+$(".flip").textrotator({
+        animation: "flipUp",
+        separator: ",",
+    speed: 2000
+});
+
+</script>
+</html>

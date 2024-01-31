@@ -1,0 +1,42 @@
+,Disease,Medicine
+0,Drug Reaction,Medicine for Drug Reaction (consultation required)
+1,Malaria,Artemether-Lumefantrine (Coartem)
+2,Allergy,Cetirizine (Zyrtec)
+3,Hypothyroidism,Levothyroxine (Synthroid)
+4,Psoriasis,Topical corticosteroids (Clobetasol)
+5,GERD,Omeprazole (Prilosec)
+6,Chronic cholestasis,Ursodeoxycholic acid (Actigall)
+7,hepatitis A,Hepatitis A vaccine (Havrix)
+8,Osteoarthristis,Acetaminophen (Tylenol)
+9,(vertigo) Paroymsal  Positional Vertigo,Meclizine (Dramamine)
+10,Hypoglycemia,Dextrose (D50)
+11,Acne,Benzoyl peroxide (Clearasil)
+12,Diabetes,Metformin (Glucophage)
+13,Impetigo,Topical antibiotics (Neosporin)
+14,Hypertension,Hydrochlorothiazide (Microzide)
+15,Peptic ulcer diseae,Omeprazole (Prilosec)
+16,Dimorphic hemorrhoids(piles),Fiber supplements (Metamucil)
+17,Common Cold,Oseltamivir (Tamiflu)
+18,Chicken pox,Ibuprofen (Advil)
+19,Cervical spondylosis,Amoxicillin (Amoxil)
+20,Hyperthyroidism,Furosemide (Lasix)
+21,Urinary tract infection,Compression stockings
+22,Varicose veins,Antibiotics (specific to the infection)
+23,AIDS,Antiretroviral therapy (ART)
+24,Paralysis (brain hemorrhage),Emergency medical attention
+25,Typhoid,"Antibiotics (e.g., Ciprofloxacin)"
+26,Hepatitis B,"Antiviral medications (e.g., Tenofovir)"
+27,Fungal infection,"Antifungal medications (e.g., Fluconazole)"
+28,Hepatitis C,"Antiviral medications (e.g., Sofosbuvir)"
+29,Migraine,"Pain relievers (e.g., Sumatriptan)"
+30,Bronchial Asthma,"Inhaled bronchodilators (e.g., Albuterol)"
+31,Alcoholic hepatitis,"Abstinence, supportive care"
+32,Jaundice,"Underlying cause treatment, supportive care"
+33,Hepatitis E,Supportive care
+34,Dengue,"Supportive care, hydration"
+35,Hepatitis D,"Treatment for Hepatitis D, as it is a co-infection"
+36,Heart attack,"Emergency medical attention, medications (e.g., Aspirin)"
+37,Pneumonia,"Antibiotics (e.g., Azithromycin)"
+38,Arthritis,Nonsteroidal anti-inflammatory drugs (NSAIDs)
+39,Gastroenteritis,"Rehydration, symptomatic treatment"
+40,Tuberculosis,"Antibiotics (e.g., Isoniazid, Rifampicin)"
