@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100|Roboto+Condensed");
+body {
+  background: url("https://images.pexels.com/photos/39308/runners-silhouettes-athletes-fitness-39308.jpeg?w=940&h=650&auto=compress&cs=tinysrgbb");
+  background-size: cover;
+}
+.col-lg-4{flex:0 0 auto;width:100.33333%}
+#chart1 {
+  top: 15%;
+  position: absolute;
+}
+
+.ct-series-a .ct-line,
+.ct-series-a .ct-point {
+  stroke: #ffffff;
+}
+
+.health {
+  color: white;
+  margin-right: 8px;
+}
+
+.icon {
+  color: white;
+  margin-right: 10px;
+}
+
+.measurement {
+  position: absolute;
+  font-family: "Lato";
+  color: white;
+  font-size: 28px;
+  opacity: 0.8;
+  top: 5%;
+  left: 20%;
+}
+
+.sub-measurement {
+  position: absolute;
+  font-family: "Lato";
+  color: white;
+  font-size: 20px;
+  opacity: 0.8;
+  top: 30%;
+  left: 20%;
+}
+
+.measurement2 {
+  position: absolute;
+  font-family: "Lato";
+  color: white;
+  font-size: 28px;
+  opacity: 0.8;
+  top: 25%;
+  left: 20%;
+}
+
+.sub-measurement2 {
+  position: absolute;
+  font-family: "Lato";
+  color: white;
+  font-size: 20px;
+  opacity: 0.8;
+  top: 40%;
+  left: 20%;
+}
+
+.title {
+  position: absolute;
+  font-family: "Roboto Condensed";
+  color: white;
+  font-size: 38px;
+  bottom: 30%;
+  left: 5%;
+}
+
+.alert {
+  position: relative;
+  text-align: center;
+  margin-top: -5%;
+  margin-bottom: -5%;
+  font-family: "Lato";
+  color: white;
+  font-size: 28px;
+}
+
+.name {
+  position: absolute;
+  font-family: "Lato";
+  color: white;
+  font-size: 28px;
+  bottom: 10%;
+  right: 5%;
+}
+
+.thumbnail {
+  position: absolute;
+  background: none;
+  width: 60px;
+  right: 5%;
+  top: 10%;
+  border-radius: 50%;
+}
+
+.thumb-pic {
+  border-radius: 50%;
+  width: 60px;
+}
+
+.block-one {
+  cursor: pointer;
+  background: linear-gradient(rgba(114, 63, 104, 0.7), rgba(78, 66, 106, 0.8), rgba(54, 66, 108, 0.9));
+  padding-top: 65px;
+  padding-bottom: 65px;
+  border-right: solid 1px rgba(255, 255, 255, 0.3);
+}
+
+.block-one:hover {
+  background: linear-gradient(rgba(97, 66, 99, 0.7), rgba(120, 66, 94, 0.8), rgba(138, 66, 89, 0.9));
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.block-two {
+  cursor: pointer;
+  background: rgba(54, 196, 199, 0.7);
+  padding-top: 65px;
+  padding-bottom: 65px;
+  border-right: solid 1px rgba(255, 255, 255, 0.3);
+}
+
+.block-two:hover {
+  background: linear-gradient(rgba(97, 66, 99, 0.7), rgba(120, 66, 94, 0.8), rgba(138, 66, 89, 0.9));
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.block-three {
+  cursor: pointer;
+  background: linear-gradient(rgba(97, 66, 99, 0.7), rgba(120, 66, 94, 0.8), rgba(138, 66, 89, 0.9));
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.block-three:hover {
+  background: linear-gradient(rgba(114, 63, 104, 0.7), rgba(78, 66, 106, 0.8), rgba(54, 66, 108, 0.9));
+  padding-top: 65px;
+  padding-bottom: 65px;
+  border-right: solid 1px rgba(255, 255, 255, 0.3);
+}
+
+.block-four {
+  cursor: pointer;
+  background: linear-gradient(rgba(114, 63, 104, 0.7), rgba(78, 66, 106, 0.8), rgba(54, 66, 108, 0.9));
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
