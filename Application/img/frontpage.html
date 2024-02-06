@@ -1,0 +1,210 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Sirona</title>
+    <!-- Add any necessary CSS or meta tags here -->
+</head>
+<style>
+    :root {
+  --var-color1: #0A1931;
+  --var-color2: #185ADB;
+  --var-color3: #85e3e0;
+  --var-color4: #EFEFEF;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--var-color1);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: url("E:\\TRI-2\\Full Stack Project\\sirona\\img\\pexels-vladislav-murashko-6032603.jpg");
+  background-size: cover;
+
+  
+}
+
+
+
+
+.box {
+    position: relative;
+    height: 100%;
+    width: 23vw;
+    min-width: 10vw;
+    max-width: 23vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in 0.8s;
+    overflow: hidden;
+    background-color: var(--var-color1);
+    border-radius: 10px;
+    border: 2px solid var(--var-color3);
+    color: var(--var-color4); 
+    margin-left: 2%;
+    
+}
+
+.box:nth-child(1) {
+    animation: apparitionBox 1.5s ease-in-out;
+}
+
+.box:nth-child(2) {
+    animation: apparitionBox 2s ease-in-out;
+}
+
+.box:nth-child(3) {
+    animation: apparitionBox 2.5s ease-in-out;
+}
+
+.box:nth-child(4) {
+    animation: apparitionBox 3s ease-in-out;
+}
+
+.box a {
+    text-decoration: none;
+    color: var(--var-color4);
+}
+
+.box p {
+    rotate: -90deg;
+    font-size: 4.7em;
+    font-weight: 300;
+    font-family: 'Lilita One', cursive;
+    transition: ease-in 0.8s;
+
+    @include respond(tab-port){ 
+        font-size: 7vw;
+        rotate: 0deg;
+    }
+}
+
+.box:hover {
+    width: 50vw;
+    max-width: 50vw;
+    background-color: var(--var-color3);
+    color: var(--var-color1);
+    transition: ease 0.8s;
+}
+
+.box:hover a {
+    color: var(--var-color1);
+    transition: ease-in 0.8s;
+}
+
+.box:hover p {
+    rotate: 0deg;
+    transition: ease-in 0.8s;
+}
+
+@keyframes apparitionBox {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+h1{
+    margin-top: -25%;
+    font-size: 80px;
+    margin-left: 20%;
+    color: white;
+    animation: fall 10s forwards ;
+}
+
+
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+    }
+    80% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-25%);
+    }
+}
+
+
+.content{
+    width: 65%;
+    height: 50%;
+    display: flex;
+    gap: 1vw;
+    margin-left: -50%;
+    margin-top: 15%;
+}
+</style>
+<body>
+    
+    <h1>
+        Welcome to Sirona
+    </h1>
+    <div class="content">
+        <div class="box" id="box1">
+            <a href="#">
+                <img id="img1" src="logindoc.jpg" alt="" width="400px" >
+                <p id="para1" style="display: none;">Doctor Login</p>
+            </a>
+        </div>
+        <div class="box" id="box2">
+            <a href="#">
+                <img id="img2" src="loginuser.png" alt="" width="500px" >
+                <p id="para2" style="display: none;">User Login</p>
+            </a>
+        </div>
+        
+            </a>
+        </div>
+    </div>
+</body>
+
+<script>
+const box1 = document.getElementById("box1");
+const p1 = document.getElementById("para1");
+const img1 = document.getElementById("img1");
+
+box1.addEventListener('mouseover', function () {
+    p1.style.display = 'block';
+    img1.style.display = 'none';
+});
+
+box1.addEventListener('mouseout', function () {
+    p1.style.display = 'none';
+    img1.style.display = 'block';
+});
+
+
+const box2 = document.getElementById("box2");
+const p2 = document.getElementById("para2");
+const img2 = document.getElementById("img2");
+
+box2.addEventListener('mouseover', function () {
+    p2.style.display = 'block';
+    img2.style.display = 'none';
+});
+
+box2.addEventListener('mouseout', function () {
+    p2.style.display = 'none';
+    img2.style.display = 'block';
+});
+
+</script>
+</html>
