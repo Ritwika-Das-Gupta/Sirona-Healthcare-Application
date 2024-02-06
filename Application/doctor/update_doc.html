@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Form (Update) </title>
+    <style>
+        body {
+            background: linear-gradient(rgba(20, 51, 97, 0.85), rgba(20, 51, 97, 0.85)), url(img/Doc.jpg) center center no-repeat;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            font-size: 15 px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 8% auto;
+            background-color:rgba(6, 163, 218, .7);
+            padding: 30px;
+            color: white;
+            animation: zoomIn 1s ease-in-out;
+        }
+
+        #appointment-form {
+            color: white;
+            margin-top: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content:first baseline;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .form-row label,
+        .form-row input,
+        .form-row select {
+            width: 50%; /* Adjust the width as needed */
+        }
+
+
+        label {
+            display: block;
+            margin-right: 0px;
+            margin-left: 10px;
+        }
+
+        input,textarea,select{
+            background-color: #e1f7ff;
+            color:#6B6A75;;
+            border-color: white;
+            border-style: double;
+            box-shadow: 0.7 white;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-right: 8px;
+            margin-bottom: 10px;
+            background-color:  #e1f7ff;
+            
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 30px;
+            background-color: #193c71;
+            color: white;
+            font-weight: bold;
+            font-size: larger;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(6, 163, 218, .7);
+            color: black;
+        }
+
+        .no-decoration {
+            text-decoration: none;
+            color: inherit; /* Optionally, this will make the link inherit the color from its parent */
+        }
+
+        .error {
+            color: #ff0000;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-style: normal;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Doctor Time Details (Update)</h1>
+    <form id="appointment-form" method="post" action="update_doc.php">
+        <h2>Available Time Slots:</h2>
+        <div class="form-row">
+            <input type="checkbox" id="slot1" name="timeSlot[]" value="06:00 - 08:00">
+            <label for="slot1">06:00 - 08:00</label>
+            <input type="checkbox" id="slot5" name="timeSlot[]" value="14:00 - 16:00">
+            <label for="slot5">14:00 - 16:00</label>
+        </div> 
+        <div class="form-row">
+            <input type="checkbox" id="slot2" name="timeSlot[]" value="08:00 - 10:00">
+            <label for="slot2">08:00 - 10:00</label>
+            <input type="checkbox" id="slot6" name="timeSlot[]" value="16:00 - 18:00">
+            <label for="slot6">16:00 - 18:00</label>
+        </div>
+        <div class="form-row">
+            <input type="checkbox" id="slot3" name="timeSlot[]" value="10:00 - 12:00">
+            <label for="slot3">10:00 - 12:00</label> 
+            <input type="checkbox" id="slot7" name="timeSlot[]" value="18:00 - 20:00">
+            <label for="slot7">18:00 - 20:00</label>
+        </div>
+        <div class="form-row">
+            <input type="checkbox" id="slot4" name="timeSlot[]" value="12:00 - 14:00">
+            <label for="slot4">12:00 - 14:00</label>           
+            <input type="checkbox" id="slot8" name="timeSlot[]" value="20:00 - 22:00">
+            <label for="slot8">20:00 - 22:00</label>
+        </div>
+        <input type="text" name="email" id="email" hidden>
+        <input type="text" name="time" id="time" hidden>
+        <button type="submit" onclick="return validateForm()">Submit</button>
+        <button type="button"><a href="../user_doctor.html" class="no-decoration">Back</a></button>
+    </form>
+    
+
+</div>
+
+<script>
+
+    function validateForm() {
+            // Get the email from the URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var email = urlParams.get('email');
+
+            // Now 'email' contains the value of the 'email' query parameter
+            document.getElementById('email').value=email;
+
+            // You can use the 'email' variable as needed in your updatedoc.html page
+
+        var timeSlotCheckboxes = document.getElementsByName('timeSlot[]');
+        var selectedSlots = 0;
+        var a =[];
+        for (var i = 0; i < timeSlotCheckboxes.length; i++) {
+            if (timeSlotCheckboxes[i].checked) {
+                a.push(timeSlotCheckboxes[i].value);
+                selectedSlots++;
+            }
+        }
+
+
+        if (selectedSlots === 0) {
+            alert('Please select at least one time slot');
+            a=[];
+            return false;
+        } 
+        else if(selectedSlots<=3 && selectedSlots!=0)
+        {
+           document.getElementById('time').value=a;
+        }
+        else if (selectedSlots > 3) {
+            alert('You can select at most 3 time slots');
+            a=[];
+            return false;
+        }
+
+        // All validations passed
+        return true;
+    }
+</script>

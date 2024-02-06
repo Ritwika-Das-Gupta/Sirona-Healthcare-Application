@@ -1,0 +1,53 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="doctorlogin.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&family=Figtree:wght@700&display=swap" rel="stylesheet">
+        <script src="login_script.js"></script>
+    </head>
+    <body>
+        <form class="container" method="post" action="check.php">
+        <div class="container">
+            <div class="pic2">
+            </div>
+            <img src="../img/logo.png" alt="">
+            <h1>Login to continue</h1>
+            <div class="inp">
+                <input type="email" placeholder="Enter your email" id="email" name="email" required> 
+                <!-- <label for="Username">Username</label> -->
+            </div>
+           
+            
+            <button type="submit" class="button" onclick="return validateForm()">Submit</button>
+            <a href="../user_doctor.html" class="no-decoration">
+            <button type="button" class="button">Back</button> </a>       </div>
+    </form>
+    <div class="pic">
+
+
+        </div>
+
+        <script>
+            function validateForm() {
+                // Email Validation
+                var email = document.getElementById('email').value;
+        
+                // Check if the email does not match the regular expression for a valid email format
+                if (!email.match(/^\S+@\S+\.\S+$/)) {
+                    alert('Invalid Email');
+                    return false;
+                }
+        
+                // All validations passed
+                return true;
+            }
+        </script>
+        
+        
+        
+    </body>
+</html>
