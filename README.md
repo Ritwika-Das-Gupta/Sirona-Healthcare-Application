@@ -1,3 +1,5 @@
+# INTRODUCTION
+
 The healthcare web application is a comprehensive
 platform that integrates key domains and subdomains to optimize
 healthcare management. The recommendation system guides
@@ -14,3 +16,5 @@ offering a holistic overview of health data and facilitating seamless
 interactions across all features. This integrated approach
 aims to elevate user experience, efficiency, and overall health
 management within a user-friendly and accessible framework.
+
+
