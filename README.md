@@ -1,6 +1,6 @@
 # Sirona: Where care meets innovation
 
-Soham Chatterjee, Ritwika Das Gupta, Swarnasish Banerjee, Sayantan Ray  
+Soham Chatterjee, Ritwika Das Gupta, Sayantan Ray, Swarnasish Banerjee 
 December-January, 2023
 
 # Steps for running the project:
